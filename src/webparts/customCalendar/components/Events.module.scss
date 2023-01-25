@@ -1,0 +1,32 @@
+.eventSection {
+    display: flex;
+    border-bottom: 1px solid #00000014;
+    .eventDateSection {
+        background-color: #FAFAFA;
+        display: flex;
+        flex-direction: column;
+        height: 109px;
+        justify-content: flex-end;
+        padding: 0 0 16px 16px;
+        width: 125px;
+    }
+    .eventInfoSection {
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        height: 125px;
+        justify-content: center;
+        width: 75%;
+        .eventSubject {
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            overflow: hidden;
+            outline: transparent;
+            position: relative;
+        }
+    }
+}

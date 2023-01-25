@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "epc-calendar-client-side-solution",
+    "id": "d39eed33-7547-418e-aa12-929b65a2a87e",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "epc-calendar description"
+      },
+      "longDescription": {
+        "default": "epc-calendar description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "epc-calendar Feature",
+        "description": "The feature that activates elements of the epc-calendar solution.",
+        "id": "c576358e-785f-4bfc-b760-93d367696d0a",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/epc-calendar.sppkg"
+  }
+}

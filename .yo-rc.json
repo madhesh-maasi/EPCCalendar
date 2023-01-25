@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "epc-calendar",
+    "libraryId": "d39eed33-7547-418e-aa12-929b65a2a87e",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "epc-calendar",
+    "solutionShortDescription": "epc-calendar description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
