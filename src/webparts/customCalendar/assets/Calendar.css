@@ -1,0 +1,47 @@
+
+    .clsEventsCalendar {
+        display: flex;
+        margin-bottom: 0px;  
+    }
+    .clsUpcomingEvents{
+        margin-top: 10px;
+    }
+
+    .clsEventsCalendar .clsEventMonth {
+        border-radius-left: 4px;
+        background-color: #FFE49F;
+        box-shadow: rgb(0 0 0 / 13%) 0px 1.6px 3.6px 0px, rgb(0 0 0 / 11%) 0px 0.3px 0.9px 0px;
+        border: 1px solid rgb(234, 234, 234) !important;
+        display: flex;
+        flex-flow: column nowrap;
+        height: 66px;
+        justify-content: flex-end;
+        overflow: hidden;
+        width: 66px;
+        margin-left: 10px;
+        padding: 10px;
+        border: 1px solid;
+    }
+
+    .clsRightCard {
+        width: 300px; 
+        box-shadow: rgb(0 0 0 / 13%) 0px 1.6px 3.6px 0px, rgb(0 0 0 / 11%) 0px 0.3px 0.9px 0px; 
+        border: 1px solid rgb(234, 234, 234) !important;      
+    }
+
+    .clsEventTitle {
+        margin: 10px;
+    }
+
+    .clsEventspan{
+        display: inline;
+        color: #03606a;
+    }
+
+.clsNoEvent {
+    display: block;
+    margin: 10px;
+    margin-left: 50px;
+    color: red;
+    left: 50px;
+}

@@ -22,10 +22,10 @@ const Calendar = (props) => {
           "data-title": "My Files Title",
         }}
       >
-        <Upcomingevents groupID={props.groupID} graph={props.graph} />
+        <Upcomingevents groupID={props.groupID} graph={props.graph} pivot={1}/>
       </PivotItem>
       <PivotItem headerText="Past">
-        <Label styles={labelStyles}>Pivot #2</Label>
+      <Upcomingevents groupID={props.groupID} graph={props.graph} pivot={2}/>
       </PivotItem>
     </Pivot>
   );
