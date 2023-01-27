@@ -50,7 +50,7 @@ export default function EventPopup(props) {
       <h2 id="simple-modal-title">Event Details</h2>
       <div>{Title}</div>
       <div>{Date} {Starttime} - {Endtime}</div>
-      <a href={"https://chandrudemo.sharepoint.com/sites/kalidevsite/_vti_bin/owssvr.dll?CS=109&Cmd=Display&List={LIST_GUID}&CacheControl=1&ID=EVENT_ID&Using=eventics"}>Click here</a>
+      <a href={"https://graph.microsoft.com/v1.0/groups/634c5ebd-3477-427e-9842-1fc9b0f978b0/events/AAMkAGE4Mzc1MWQxLWEwZGEtNDRkMi1iYzYwLWMwNGJhMTk4MmI0YgBGAAAAAABULBCDu9X_TJM-vh04nvz1BwDdgDgyTW65SJsjy0j7nJIsAAAAAAENAADdgDgyTW65SJsjy0j7nJIsAADTNn5nAAA=?$expand=attachments"}>Click here</a>
     </div>
   );
 
