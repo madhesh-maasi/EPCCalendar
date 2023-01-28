@@ -1,45 +1,46 @@
+.clsEventsCalendar {
+    display: flex;
+    margin-bottom: 0px;
+    width: 100%;
+    cursor: pointer;
+}
 
-    .clsEventsCalendar {
-        display: flex;
-        margin-bottom: 0px;  
-        width: 500px;
-        cursor: pointer;
-    }
-    .clsUpcomingEvents{
-        margin-top: 10px;
-    }
+.clsUpcomingEvents {
+    margin-top: 10px;
+}
 
-    .clsEventsCalendar .clsEventMonth {
-        border-radius-left: 4px;
-        background-color: #FFE49F;
-        box-shadow: rgb(0 0 0 / 13%) 0px 1.6px 3.6px 0px, rgb(0 0 0 / 11%) 0px 0.3px 0.9px 0px;
-        border: 1px solid rgb(234, 234, 234) !important;
-        display: flex;
-        flex-flow: column nowrap;
-        height: 66px;
-        justify-content: flex-end;
-        overflow: hidden;
-        width: 66px;
-        margin-left: 10px;
-        padding: 10px;
-        border: 1px solid;
-        
-    }
+.clsEventsCalendar .clsEventMonth {
+    background-color: #FFE49F;
+    box-shadow: rgb(0 0 0 / 13%) 0px 1.6px 3.6px 0px, rgb(0 0 0 / 11%) 0px 0.3px 0.9px 0px;
+    border: 1px solid rgb(234, 234, 234) !important;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 109px;
+    justify-content: flex-end;
+    overflow: hidden;
+    width: 125px;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid;
+}
 
-    .clsRightCard {
-        width: 300px; 
-        box-shadow: rgb(0 0 0 / 13%) 0px 1.6px 3.6px 0px, rgb(0 0 0 / 11%) 0px 0.3px 0.9px 0px; 
-        border: 1px solid rgb(234, 234, 234) !important;      
-    }
+.clsRightCard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: rgb(0 0 0 / 13%) 0px 1.6px 3.6px 0px, rgb(0 0 0 / 11%) 0px 0.3px 0.9px 0px;
+    border: 1px solid rgb(234, 234, 234) !important;
+}
 
-    .clsEventTitle {
-        margin: 10px;
-    }
+.clsEventTitle,
+.clsEventSubTitle {
+    margin: 6px 10px;
+}
 
-    .clsEventspan{
-        display: inline;
-        color: #03606a;
-    }
+.clsEventspan {
+    color: #03606a;
+}
 
 .clsNoEvent {
     display: block;
@@ -47,4 +48,126 @@
     margin-left: 50px;
     color: red;
     left: 50px;
+}
+
+.clsEventMonthName {
+    color: #03606a;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.clsEventDate {
+    color: #03606a;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.clsEventTitle {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.clsEventTitle:hover {
+    text-decoration: underline;
+}
+
+.selectedEventModalOverlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectedEventModal {
+    padding: 16px 24px;
+    max-height: 70vh;
+    max-width: 650px;
+    overflow: auto;
+    width: 100%;
+    outline: none !important;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+}
+
+.modalTitle {
+    color: #03606a;
+}
+
+.modalCloseIcon {
+    color: #a7a7a7;
+    cursor: pointer;
+}
+
+.modalData {
+    width: 50%;
+    margin: 6px 0;
+}
+
+.description {
+    width: 100%;
+}
+
+.modalDataSection {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modalDataLabel {
+    color: #414141;
+    width: 300px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.modalDataLabel .MuiTypography-root {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+
+.modalDataAnswer {
+    color: #03606a;
+    font-size: 16px;
+}
+
+.modalDataAnswer .MuiTypography-root {
+    color: #03606a;
+    font-size: 14px;
+}
+
+.expandCollapse {
+    cursor: pointer;
+    color: #03606a;
+}
+
+.calendarFooterSection {
+    margin: 12px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.refreshSection {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 1000;
+    bottom: -26px;
+    height: 0;
+}
+
+.refreshSection>div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #03606a;
+}
+
+.ms-Pivot-text {
+    color: #03606a !important;
+}
+
+.ms-Pivot .is-selected::before {
+    background-color: #03606a !important;
 }

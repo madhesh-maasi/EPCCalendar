@@ -1,8 +1,10 @@
-import * as React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
+import * as React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Modal from "@material-ui/core/Modal";
 import * as moment from "moment";
-
+import "../assets/Calendar.css";
+import Typography from "@material-ui/core/Typography";
+import { AccessAlarm, Clear } from "@material-ui/icons";
 function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
@@ -20,43 +22,130 @@ function getModalStyle() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    position: 'absolute',
-    width: "80%",
-    top: "50% !important",
-    left: "50% !important",
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
   },
 }));
 
 export default function EventPopup(props) {
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
-  const[reload,setreload]=React.useState(false);
+  const [reload, setreload] = React.useState(false);
   const handleClose = () => {
     props.closeclick();
   };
 
-
-  let Title=props.EventTitle;
-  let Date=props.EventStart?moment(props.EventStart).format("DD/MM/YYYY"):"";
-  let Starttime=props.EventStart?moment(props.EventStart).format("hh:mm a"):"";
-  let Endtime=props.EventEnd?moment(props.EventEnd).format("hh:mm a"):"";
+  let Title = props.EventTitle;
+  let Date = props.EventStart
+    ? moment(props.EventStart).format("DD/MM/YYYY")
+    : "";
+  let Starttime = props.EventStart
+    ? moment(props.EventStart).format("hh:mm a")
+    : "";
+  let Endtime = props.EventEnd ? moment(props.EventEnd).format("hh:mm a") : "";
 
   const body = (
-    <div style={modalStyle} className={classes.paper}>
-      <h2 id="simple-modal-title">Event Details</h2>
-      <div>{Title}</div>
-      <div>{Date} {Starttime} - {Endtime}</div>
-      <a href={"https://graph.microsoft.com/v1.0/groups/634c5ebd-3477-427e-9842-1fc9b0f978b0/events/AAMkAGE4Mzc1MWQxLWEwZGEtNDRkMi1iYzYwLWMwNGJhMTk4MmI0YgBGAAAAAABULBCDu9X_TJM-vh04nvz1BwDdgDgyTW65SJsjy0j7nJIsAAAAAAENAADdgDgyTW65SJsjy0j7nJIsAADTNn5nAAA=?$expand=attachments"}>Click here</a>
+    <div className={`${classes.paper} selectedEventModal`}>
+      <div className="modalHeader">
+        <Typography variant="h5" className="modalTitle">
+          Event Details
+        </Typography>
+        <Clear onClick={handleClose} className="modalCloseIcon" />
+      </div>
+      <div className="modalDataSection">
+        <div className="modalData">
+          <div className="modalDataLabel">
+            {" "}
+            <Typography>Subject:</Typography>
+          </div>
+          <div className="modalDataAnswer">
+            <Typography>{Title}</Typography>
+          </div>
+        </div>
+        <div className="modalData">
+          <div className="modalDataLabel">
+            {" "}
+            <Typography>Organizer:</Typography>
+          </div>
+          <div className="modalDataAnswer">
+            <Typography>{props.organizer}</Typography>
+          </div>
+        </div>
+        <div className="modalData">
+          <div className="modalDataLabel">
+            {" "}
+            <Typography>Start Date</Typography>
+          </div>
+          <div className="modalDataAnswer">
+            <Typography>
+              {moment(props.startDateTime).format("DD/MM/YYYY hh:mm a")}
+            </Typography>
+          </div>
+        </div>
+        <div className="modalData">
+          <div className="modalDataLabel">
+            {" "}
+            <Typography>End Date</Typography>
+          </div>
+          <div className="modalDataAnswer">
+            <Typography>
+              {moment(props.endDateTime).format("DD/MM/YYYY hh:mm a")}
+            </Typography>
+          </div>
+        </div>
+        {props.allDay && (
+          <div className="modalData">
+            <div className="modalDataLabel">
+              {" "}
+              <Typography>All Day</Typography>
+            </div>
+            <div className="modalDataAnswer">
+              <Typography>{`${props.allDay}`}</Typography>
+            </div>
+          </div>
+        )}
+        {props.location !== "" && (
+          <div className="modalData">
+            <div className="modalDataLabel">
+              {" "}
+              <Typography>Location</Typography>
+            </div>
+            <div className="modalDataAnswer">
+              <Typography>{props.location}</Typography>
+            </div>
+          </div>
+        )}
+        {props.body !== "" && (
+          <div className="modalData description">
+            <div className="modalDataLabel">
+              {" "}
+              <Typography>Description</Typography>
+            </div>
+            <div className="modalDataAnswer">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: props.body,
+                }}
+              />
+            </div>
+          </div>
+        )}
+      </div>
+
+      <a
+        href={
+          "https://graph.microsoft.com/v1.0/groups/634c5ebd-3477-427e-9842-1fc9b0f978b0/events/AAMkAGE4Mzc1MWQxLWEwZGEtNDRkMi1iYzYwLWMwNGJhMTk4MmI0YgBGAAAAAABULBCDu9X_TJM-vh04nvz1BwDdgDgyTW65SJsjy0j7nJIsAAAAAAENAADdgDgyTW65SJsjy0j7nJIsAADTNn5nAAA=?$expand=attachments"
+        }
+      >
+        Click here
+      </a>
     </div>
   );
 
   return (
     <div>
       <Modal
+        className="selectedEventModalOverlay"
         open={props.modal}
         onClose={handleClose}
         aria-labelledby="simple-modal-title"
