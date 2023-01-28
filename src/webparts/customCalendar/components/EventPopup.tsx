@@ -5,6 +5,7 @@ import * as moment from "moment";
 import "../assets/Calendar.css";
 import Typography from "@material-ui/core/Typography";
 import { AccessAlarm, Clear } from "@material-ui/icons";
+import ICS from "./ICS";
 function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
@@ -131,14 +132,14 @@ export default function EventPopup(props) {
           </div>
         )}
       </div>
-
-      <a
+      <ICS eventdata={props}/>
+      {/* <a
         href={
           "https://graph.microsoft.com/v1.0/groups/634c5ebd-3477-427e-9842-1fc9b0f978b0/events/AAMkAGE4Mzc1MWQxLWEwZGEtNDRkMi1iYzYwLWMwNGJhMTk4MmI0YgBGAAAAAABULBCDu9X_TJM-vh04nvz1BwDdgDgyTW65SJsjy0j7nJIsAAAAAAENAADdgDgyTW65SJsjy0j7nJIsAADTNn5nAAA=?$expand=attachments"
         }
       >
         Click here
-      </a>
+      </a> */}
     </div>
   );
 

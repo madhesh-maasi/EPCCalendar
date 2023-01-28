@@ -3,6 +3,7 @@ import "../assets/Calendar.css";
 import * as moment from "moment";
 import EventPopup from "./EventPopup";
 import { useState } from "react";
+import ICS from "./ICS";
 export default function EventsCal(props): JSX.Element {
   const [modalopen, setmodalopen] = React.useState(false);
   const [modalItem, setmodalItem] = React.useState([]);

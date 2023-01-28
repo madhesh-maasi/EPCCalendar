@@ -45,9 +45,9 @@
 .clsNoEvent {
     display: block;
     margin: 10px;
-    margin-left: 50px;
-    color: red;
-    left: 50px;
+    /* margin-left: 50px; */
+    color: #03606a;
+text-align: center;
 }
 
 .clsEventMonthName {

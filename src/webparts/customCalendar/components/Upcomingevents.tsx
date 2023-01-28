@@ -36,6 +36,7 @@ const Upcomingevents = (props) => {
       })
       .catch(function (error) {
         console.log(error);
+        setIsLoader(false);
       });
   };
   useEffect(() => {
