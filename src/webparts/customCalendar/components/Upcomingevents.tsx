@@ -20,10 +20,10 @@ const Upcomingevents = (props) => {
     let enddate = moment().format("YYYY-MM-DD");
     if (props.pivot == 1) {
       startdate = moment().format("YYYY-MM-DD");
-      enddate = moment().add(30, "days").format("YYYY-MM-DD"); //one month data from today
+      enddate = moment().add(30, "days").format("YYYY-MM-DD"); //three month data from today
     } else if (props.pivot == 2) {
       enddate = moment().format("YYYY-MM-DD");
-      startdate = moment().subtract(90, "days").format("YYYY-MM-DD"); //three month before data from today.
+      startdate = moment().subtract(180, "days").format("YYYY-MM-DD"); //six month before data from today.
     }
     await graph.groups
       .getById(props.groupID)
