@@ -29,6 +29,7 @@ const Upcomingevents = (props) => {
       .getById(props.groupID)
       .getCalendarView(new Date(startdate), new Date(enddate))
       .then((events) => {
+        console.log(events);
         events = props.isAll ? events : events.filter((evt, i) => i <= 2);
         if (events.length > 0) setEventsUC([...events]);
         else setEventsUC([]);
