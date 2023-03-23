@@ -36,9 +36,11 @@ export default function EventPopup(props) {
     props.closeclick();
   };
 
+  var tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+
   let Title = props.EventTitle;
   let Date = props.EventStart
-    ? moment(props.EventStart).format("DD/MM/YYYY")
+    ? moment(props.EventStart).format("MM/DD/YYYY")
     : "";
   let Starttime = props.EventStart
     ? moment(props.EventStart).format("hh:mm a")
@@ -79,7 +81,7 @@ export default function EventPopup(props) {
           </div>
           <div className="modalDataAnswer">
             <Typography>
-              {moment(props.startDateTime).format("DD/MM/YYYY hh:mm a")}
+              {moment(props.startDateTime).format("MM/DD/YYYY hh:mm a")}
             </Typography>
           </div>
         </div>
@@ -90,7 +92,18 @@ export default function EventPopup(props) {
           </div>
           <div className="modalDataAnswer">
             <Typography>
-              {moment(props.endDateTime).format("DD/MM/YYYY hh:mm a")}
+              {moment(props.endDateTime).format("MM/DD/YYYY hh:mm a")}
+            </Typography>
+          </div>
+        </div>
+        <div className="modalData">
+        <div className="modalDataLabel">
+            {" "}
+            <Typography>Time Zone</Typography>
+          </div>
+          <div className="modalDataAnswer">
+            <Typography>
+              {tz}
             </Typography>
           </div>
         </div>
