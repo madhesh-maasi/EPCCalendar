@@ -42,10 +42,20 @@ export default function EventPopup(props) {
   let Date = props.EventStart
     ? moment(props.EventStart).format("MM/DD/YYYY")
     : "";
+
   let Starttime = props.EventStart
     ? moment(props.EventStart).format("hh:mm a")
     : "";
   let Endtime = props.EventEnd ? moment(props.EventEnd).format("hh:mm a") : "";
+
+
+  let startUTCDate:any = moment(props.startDateTime).utc().format();
+  let UTCStartTime=moment(props.startDateTime).utc(startUTCDate).local().format('MM/DD/YYYY hh:mm a');
+
+  let endUTCDate:any = moment(props.endDateTime).utc().format();
+  let UTCEndTime=moment(props.endDateTime).utc(endUTCDate).local().format('MM/DD/YYYY hh:mm a');
+
+  console.log(UTCStartTime,UTCEndTime);
 
   const body = (
     <div className={`${classes.paper} selectedEventModal`}>
@@ -81,7 +91,7 @@ export default function EventPopup(props) {
           </div>
           <div className="modalDataAnswer">
             <Typography>
-              {moment(props.startDateTime).format("MM/DD/YYYY hh:mm a")}
+              {UTCStartTime}
             </Typography>
           </div>
         </div>
@@ -92,7 +102,7 @@ export default function EventPopup(props) {
           </div>
           <div className="modalDataAnswer">
             <Typography>
-              {moment(props.endDateTime).format("MM/DD/YYYY hh:mm a")}
+            {UTCEndTime}
             </Typography>
           </div>
         </div>

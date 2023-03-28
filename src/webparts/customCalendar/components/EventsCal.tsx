@@ -29,6 +29,12 @@ export default function EventsCal(props): JSX.Element {
               const StartDate = item.start.dateTime;
               const EndDate = item.end.dateTime;
 
+              let startUTCDate:any = moment(StartDate).utc().format();
+              let UTCStartTime=moment(StartDate).utc(startUTCDate).local().format('hh:mm a');
+            
+              let endUTCDate:any = moment(EndDate).utc().format();
+              let UTCEndTime=moment(EndDate).utc(endUTCDate).local().format('hh:mm a');
+
               return (
                 <div
                   className="clsEventsCalendar"
@@ -64,8 +70,8 @@ export default function EventsCal(props): JSX.Element {
                     <div className="clsEventSubTitle">
                       <span className="clsEventspan">
                         {moment(StartDate).format("ddd")}{" "}
-                        {moment(StartDate).format("hh:mm a")} -{" "}
-                        {moment(EndDate).format("hh:mm a")}
+                        {UTCStartTime} -{" "}
+                        {UTCEndTime}
                       </span>
                     </div>
                   </div>
